@@ -1,0 +1,47 @@
+display_url: http://localhost:8080
+collections:
+  # ... existing collections
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images"
+public_folder: "/images/"
+
+collections:
+  - name: "menu_items"
+    label: "Menu Items"
+    folder: "src/menu"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["breakfast", "lunch", "dessert"] }
+      - { label: "Price", name: "price", widget: "number", value_type: "float" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Dietary Tags", name: "tags", widget: "list", allow_add: true }
+
+  - name: "chef"
+    label: "Chef Profile"
+    files:  # Changed from 'file' to 'files'
+      - name: "profile"
+        label: "Chef Profile"
+        file: "src/_data/chef.json"
+        fields:
+          - { label: "Chef Name", name: "name", widget: "string" }
+          - { label: "Bio", name: "bio", widget: "markdown" }
+          - { label: "Photo", name: "photo", widget: "image" }
+          - { label: "Signature Dishes", name: "dishes", widget: "list", fields: [{label: "Dish", name: "dish", widget: "string"}] }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "src/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Author Name", name: "author", widget: "string" }
+      - { label: "Author Title", name: "role", widget: "string" }
+      - { label: "Testimonial Text", name: "content", widget: "text" }
+      - { label: "Author Photo", name: "photo", widget: "image" }
+      - { label: "Rating", name: "rating", widget: "number", value_type: "int", min: 1, max: 5 }

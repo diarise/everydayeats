@@ -1,0 +1,17 @@
+{% for category in ["breakfast", "lunch", "dessert"] %}
+<div class="menu-category-section {% if loop.first %}active{% endif %}" id="{{ category }}">
+  <h3 class="menu-category-title">
+    <span class="category-icon">
+      {{ "🥐" if category == "breakfast" }}
+      {{ "🌶️" if category == "lunch" }}
+      {{ "🍰" if category == "dessert" }}
+    </span>
+    {{ collections[category][0].data.category | capitalize }} Specialties
+  </h3>
+  <div class="menu-grid">
+    {% for item in collections[category] %}
+      {% include "menu-item.njk" %}
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}

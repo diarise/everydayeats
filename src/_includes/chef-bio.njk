@@ -1,0 +1,17 @@
+<section class="about-section" id="about">
+  <div class="chef-photo">
+    <img src="{{ chef.photo }}" alt="{{ chef.name }}" loading="lazy">
+  </div>
+  <div class="chef-bio">
+    <h2 class="section-title">Meet {{ chef.name }}</h2>
+    {{ chef.bio | safe }}
+    <div class="signature-dishes">
+      <h3>Chef's Signature Creations</h3>
+      <ul>
+        {% for dish in chef.dishes %}
+        <li>{{ dish.dish }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

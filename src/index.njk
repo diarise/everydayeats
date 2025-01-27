@@ -1,0 +1,28 @@
+---
+layout: layout.njk
+permalink: /
+---
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Crafted with Love,<br>Delivered with Care</h1>
+            <p>Fresh, homemade meals prepared daily using local ingredients</p>
+            <div class="hero-cta">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="/images/hero.jpg" alt="Fresh Ingredients" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section">
+  <h2 class="section-title">What Our Customers Say</h2>
+  <div class="menu-grid">
+    {% for testimonial in collections.testimonials %}
+      {% include "testimonial-card.njk" %}
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,10 @@
+{
+    "name": "Chef Sarah",
+    "bio": "With over 15 years of culinary experience...",
+    "photo": "/images/chef.jpg",
+    "dishes": [
+      {"dish": "Authentic French Croissants"},
+      {"dish": "Traditional Thieboudienne"},
+      {"dish": "Grand Marnier Soufflé"}
+    ]
+  }

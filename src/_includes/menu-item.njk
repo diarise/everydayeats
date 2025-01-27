@@ -1,0 +1,18 @@
+<div class="menu-card" data-category="{{ category }}">
+  <div class="card-image">
+    <img src="{{ image }}" alt="{{ title }}" loading="lazy">
+  </div>
+  <div class="card-content">
+    {% if tags %}
+    <div class="dietary-tags">
+      {% for tag in tags %}
+      <span class="dietary-tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <h3>{{ title }}</h3>
+    <p>{{ description }}</p>
+    <div class="price-tag">${{ price | fixed(2) }}</div>
+    <button class="btn btn-primary add-to-cart">Add to Cart</button>
+  </div>
+</div>
